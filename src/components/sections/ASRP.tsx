@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Header from "../ui/Header";
+import Head from "../ui/Head";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useForm } from "react-hook-form";
@@ -69,23 +69,34 @@ const ASRP: React.FC = () => {
   const onSubmit = async (data: FormValues) => {
     try {
       setIsSubmitting(true);
-      // TODO: Implement your API call here
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulated API call
+      // Send form data to Google Apps Script
+      const response = await fetch("YOUR_SCRIPT_URL", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to submit RSVP");
+      }
       reset();
     } catch (error) {
+      // Optionally handle error (e.g., show notification)
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-4 space-y-6 pb-14">
-      <Header header="ASRP" />
+    <section className="max-w-5xl mx-auto px-4 space-y-6 pb-[8rem]">
+      <Head header="ASRP" />
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <div className="flex flex-col md:flex-row items-center gap-4">
           <div className="w-full">
             <Input
               {...register("name")}
+              required
               placeholder="Full Name"
               type="text"
               className="w-full"
@@ -101,6 +112,7 @@ const ASRP: React.FC = () => {
             <Input
               {...register("email")}
               placeholder="Email Address"
+              required
               type="email"
               className="w-full"
             />
@@ -116,6 +128,7 @@ const ASRP: React.FC = () => {
           <Input
             {...register("attendance", { valueAsNumber: true })}
             placeholder="Number of Guests"
+            required
             type="number"
             min={1}
             max={10}
@@ -132,7 +145,7 @@ const ASRP: React.FC = () => {
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Submitting..." : "Send RSVP"}
+          {isSubmitting ? "Submitting..." : "Send ASRP"}
         </Button>
       </form>
     </section>
