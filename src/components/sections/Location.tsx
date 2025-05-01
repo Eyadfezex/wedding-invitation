@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Head from "../ui/Head";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Location = () => {

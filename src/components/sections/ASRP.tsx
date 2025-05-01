@@ -20,9 +20,9 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 /**
- * ASRP (Attendance and RSVP) Component
+ * ASRP (Attendance and ASRP) Component
  *
- * A form component that handles wedding guest registration and RSVP functionality.
+ * A form component that handles wedding guest registration and ASRP functionality.
  *
  * @component
  * @example
@@ -78,11 +78,11 @@ const ASRP: React.FC = () => {
         body: JSON.stringify(data),
       });
       if (!response.ok) {
-        throw new Error("Failed to submit RSVP");
+        throw new Error("Failed to submit ASRP");
       }
       reset();
     } catch (error) {
-      // Optionally handle error (e.g., show notification)
+      console.error("ASRP submission failed:", error);
     } finally {
       setIsSubmitting(false);
     }

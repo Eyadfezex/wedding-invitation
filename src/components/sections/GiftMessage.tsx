@@ -51,7 +51,7 @@ const GiftMessage = () => {
       }
       reset();
     } catch (error) {
-      // Optionally handle error (e.g., show notification)
+      console.error("Error sending message:", error);
     } finally {
       setIsSubmitting(false);
     }

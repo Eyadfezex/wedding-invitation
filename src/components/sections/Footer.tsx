@@ -23,7 +23,7 @@ const bigShoulders = Big_Shoulders_Text({
 const Footer: React.FC = () => {
   return (
     <footer
-      className="bg-[url('/787a2de551fc2d33db83544e39e916d11b8dab8d.png')] bg-cover h-[20rem] flex items-center"
+      className="bg-[url('https://i.postimg.cc/LmM89PsR/787a2de551fc2d33db83544e39e916d11b8dab8d.webp')] bg-cover h-[20rem] flex items-center"
       aria-label="Page footer"
     >
       <VelocityScroll

@@ -44,10 +44,10 @@ const Hero: React.FC = () => {
 
   return (
     <section className="mx-auto h-[60rem] lg:h-screen text-primary">
-      <div className="bg-[url('/d3f6998547db5bbbbe40ba0d1260d0ad00afa646.png')] h-full w-full bg-cover [background-position-y:50%] bg-no-repeat relative overflow-hidden space-y-[8rem]">
+      <div className="bg-[url('https://i.postimg.cc/qkvhrKmq/d3f6998547db5bbbbe40ba0d1260d0ad00afa646.webp')] h-full w-full bg-cover [background-position-y:50%] bg-no-repeat relative overflow-hidden space-y-[8rem]">
         {/* Decorative wave background */}
         <Image
-          src="/aewrg.png"
+          src="https://i.postimg.cc/jxj5VrS7/aewrg.webp"
           width={5000}
           height={5000}
           priority
@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
                   className="relative rounded-full h-[330px] w-[200px] lg:h-[400px] lg:w-[250px] overflow-hidden z-20"
                 >
                   <Image
-                    src="/54a810555979f3b9ac4515d9101e071bffc740ba.jpg"
+                    src="https://i.postimg.cc/rqJ07jN7/54a810555979f3b9ac4515d9101e071bffc740ba.webp"
                     alt="Couple's profile picture"
                     width={8000}
                     height={8000}
